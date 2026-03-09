@@ -378,8 +378,30 @@ body {
    FOOTER / PIE DE PÁGINA
 ===================================================== */
 footer {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    background: #16213e; /* Solid dark blue for contrast */
     border-top: 1px solid rgba(13, 110, 253, 0.2);
+}
+
+/* Force footer text and links to be light for readability */
+footer,
+footer p,
+footer li,
+footer h5 {
+    color: #f1f1f1 !important;
+}
+
+footer a {
+    color: #f1f1f1 !important;
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--primary-color) !important;
+}
+
+/* override any .text-muted inside footer */
+footer .text-muted {
+    color: #ccc !important;
 }
 
 footer h5 {
