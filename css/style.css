@@ -1,0 +1,516 @@
+/* =====================================================
+   VARIABLES Y COLORES
+===================================================== */
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --danger-color: #dc3545;
+    --dark-bg: #212529;
+    --light-bg: #f8f9fa;
+    --text-dark: #212529;
+    --text-muted: #6c757d;
+    --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 10px;
+}
+
+/* =====================================================
+   ESTILOS GENERALES
+===================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* =====================================================
+   NAVBAR / ENCABEZADO
+===================================================== */
+.navbar {
+    background: linear-gradient(135deg, rgba(13, 110, 253, 0.1), rgba(33, 37, 41, 1)) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(13, 110, 253, 0.2);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    color: var(--primary-color) !important;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 10px rgba(13, 110, 253, 0.5);
+}
+
+.navbar-nav .nav-link {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    color: #fff !important;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: var(--primary-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* =====================================================
+   SECCIÓN HERO
+===================================================== */
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="dots" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="2" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="1200" height="600" fill="url(%23dots)"/></svg>');
+    opacity: 0.5;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.animate-fade-in {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-section .btn {
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: var(--border-radius);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.hero-section .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.hero-section .btn-outline-light:hover {
+    background-color: white;
+    color: #667eea !important;
+    transform: translateY(-2px);
+}
+
+/* =====================================================
+   SECCIÓN SERVICIOS
+===================================================== */
+.servicios-section {
+    background-color: white;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.servicios-section h2 {
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.divider-line {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), #764ba2);
+    border-radius: 2px;
+    margin-top: 1rem;
+}
+
+.service-card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), #764ba2);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.service-card:hover::before {
+    transform: scaleX(1);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--primary-color), #764ba2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    color: white;
+    font-size: 2rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.service-card:nth-child(2) .card-icon {
+    animation-delay: 0.2s;
+}
+
+.service-card:nth-child(3) .card-icon {
+    animation-delay: 0.4s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.card-title {
+    color: var(--text-dark);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.card-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.service-card .btn {
+    border-radius: 5px;
+    font-weight: 600;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.service-card .btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(13, 110, 253, 0.4);
+}
+
+/* =====================================================
+   SECCIÓN SOBRE NOSOTROS
+===================================================== */
+.about-section {
+    background-color: var(--light-bg);
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.about-section h2 {
+    color: var(--text-dark);
+}
+
+.about-section h3 {
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.about-image {
+    position: relative;
+}
+
+.placeholder-image {
+    background: linear-gradient(135deg, var(--primary-color), #764ba2);
+    border-radius: var(--border-radius);
+    padding: 60px;
+    text-align: center;
+    color: white;
+    box-shadow: var(--card-shadow);
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.placeholder-image i {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.placeholder-image p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 1rem;
+}
+
+.about-section ul li {
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+}
+
+.about-section ul li:hover {
+    padding-left: 10px;
+}
+
+.about-section .text-success {
+    color: var(--success-color) !important;
+}
+
+/* =====================================================
+   SECCIÓN CTA (CALL TO ACTION) / CONTACTO
+===================================================== */
+.cta-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="30" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="1200" height="600" fill="url(%23pattern)"/></svg>');
+    opacity: 0.3;
+}
+
+.cta-section .display-5 {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-info {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 200px;
+}
+
+.contact-info:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.contact-info a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: white !important;
+}
+
+/* =====================================================
+   FOOTER / PIE DE PÁGINA
+===================================================== */
+footer {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-top: 1px solid rgba(13, 110, 253, 0.2);
+}
+
+footer h5 {
+    color: white;
+    font-weight: 700;
+}
+
+footer a {
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--primary-color) !important;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 1rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+    color: var(--primary-color) !important;
+}
+
+footer hr {
+    opacity: 0.3;
+    margin: 2rem 0;
+}
+
+/* =====================================================
+   ESTILOS RESPONSIVOS
+===================================================== */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .hero-section .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .d-flex.flex-column.flex-sm-row {
+        flex-wrap: wrap;
+    }
+
+    .contact-info {
+        margin-bottom: 1rem;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.5rem 0;
+        margin: 0;
+    }
+
+    .about-section h3 {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section .btn {
+        display: block;
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .service-card {
+        margin-bottom: 2rem;
+    }
+
+    .display-5 {
+        font-size: 2rem !important;
+    }
+
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+}
+
+/* =====================================================
+   ANIMACIONES ADICIONALES
+===================================================== */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* =====================================================
+   CLASES UTILITARIAS
+===================================================== */
+.text-white-50 {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.text-white {
+    color: white;
+}
+
+.bg-gradient {
+    background: linear-gradient(135deg, var(--primary-color), #764ba2);
+}
+
+/* Scroll smooth para todo */
+html {
+    scroll-behavior: smooth;
+}
