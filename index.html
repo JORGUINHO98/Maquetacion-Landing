@@ -184,43 +184,155 @@
         </div>
     </section>
 
-    <!-- SECCIÓN CONTACTO / CALL TO ACTION -->
-    <section id="contacto" class="py-5 cta-section">
+    <!-- SECCIÓN CONTACTO / FORMULARIO -->
+    <section id="contacto" class="py-5 bg-light">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="display-5 fw-bold mb-3 text-white">¿Listo para comenzar?</h2>
-                    <p class="lead text-white-50 mb-5">
-                        Contáctanos hoy y descubre cómo podemos llevar tu negocio al siguiente nivel
-                    </p>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="text-center mb-5">
+                        <h2 class="display-5 fw-bold mb-3">¿Listo para comenzar?</h2>
+                        <p class="lead text-muted mb-5">
+                            Contáctanos hoy y descubre cómo podemos llevar tu negocio al siguiente nivel
+                        </p>
+                    </div>
 
-                    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-                        <div class="contact-info">
-                            <i class="fas fa-envelope fs-4 text-primary"></i>
-                            <p class="text-white mt-2">
-                                <strong>Email:</strong><br>
-                                <a href="mailto:info@tecnoweb.com" class="text-white-50">info@tecnoweb.com</a>
-                            </p>
+                    <div class="row">
+                        <!-- Formulario -->
+                        <div class="col-lg-8 mb-4">
+                            <form id="contactFormIndex" class="contact-form">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="nombreIndex" class="form-label">
+                                            Nombre Completo <span class="required">*</span>
+                                        </label>
+                                        <input 
+                                            type="text" 
+                                            class="form-control" 
+                                            id="nombreIndex" 
+                                            name="nombre" 
+                                            placeholder="Tu nombre"
+                                            required
+                                        >
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="emailIndex" class="form-label">
+                                            Correo Electrónico <span class="required">*</span>
+                                        </label>
+                                        <input 
+                                            type="email" 
+                                            class="form-control" 
+                                            id="emailIndex" 
+                                            name="email" 
+                                            placeholder="tu@email.com"
+                                            required
+                                        >
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="mensajeIndex" class="form-label">
+                                        Mensaje <span class="required">*</span>
+                                    </label>
+                                    <textarea 
+                                        class="form-control" 
+                                        id="mensajeIndex" 
+                                        name="mensaje" 
+                                        placeholder="Cuéntanos sobre tu proyecto..."
+                                        required
+                                    ></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        <input 
+                                            class="form-check-input" 
+                                            type="checkbox" 
+                                            id="terminosIndex" 
+                                            name="terminos"
+                                            required
+                                        >
+                                        <label class="form-check-label" for="terminosIndex">
+                                            Acepto los <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">términos y condiciones</a> <span class="required">*</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <button type="submit" class="btn btn-submit">
+                                        <i class="fas fa-paper-plane me-2"></i>Enviar Mensaje
+                                    </button>
+                                    <button type="button" class="btn btn-outline-secondary" onclick="resetFormIndex()">
+                                        <i class="fas fa-undo me-2"></i>Limpiar
+                                    </button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="contact-info">
-                            <i class="fas fa-phone fs-4 text-primary"></i>
-                            <p class="text-white mt-2">
-                                <strong>Teléfono:</strong><br>
-                                <a href="tel:+5491234567890" class="text-white-50">+54 911 2345 678</a>
-                            </p>
-                        </div>
-                        <div class="contact-info">
-                            <i class="fas fa-map-marker-alt fs-4 text-primary"></i>
-                            <p class="text-white mt-2">
-                                <strong>Ubicación:</strong><br>
-                                <span class="text-white-50">Santa Cruz, Bolivia</span>
-                            </p>
+
+                        <!-- Información de contacto -->
+                        <div class="col-lg-4">
+                            <div class="contact-info p-4 bg-white rounded shadow-sm">
+                                <h5 class="mb-4">Información de Contacto</h5>
+                                <div class="mb-3">
+                                    <i class="fas fa-envelope text-primary me-2"></i>
+                                    <strong>Email:</strong><br>
+                                    <a href="mailto:info@tecnoweb.com" class="text-muted">info@tecnoweb.com</a>
+                                </div>
+                                <div class="mb-3">
+                                    <i class="fas fa-phone text-primary me-2"></i>
+                                    <strong>Teléfono:</strong><br>
+                                    <a href="tel:+5491234567890" class="text-muted">+54 911 2345 678</a>
+                                </div>
+                                <div class="mb-3">
+                                    <i class="fas fa-map-marker-alt text-primary me-2"></i>
+                                    <strong>Ubicación:</strong><br>
+                                    <span class="text-muted">Santa Cruz, Bolivia</span>
+                                </div>
+                                <div class="mt-4">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#infoModal">
+                                        <i class="fas fa-info-circle me-2"></i>Más Información
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Modal Términos -->
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="termsModalLabel">Términos y Condiciones</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Aquí van los términos y condiciones de nuestro servicio...</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Información -->
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="infoModalLabel">Más Información</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Información adicional sobre nuestros servicios. Contáctanos para más detalles.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Contactar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- FOOTER / PIE DE PÁGINA -->
     <footer class="bg-dark text-white py-5">
@@ -279,5 +391,17 @@
 
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.getElementById('contactFormIndex').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Mensaje enviado exitosamente!');
+            this.reset();
+        });
+
+        function resetFormIndex() {
+            document.getElementById('contactFormIndex').reset();
+        }
+    </script>
 </body>
 </html>

@@ -532,6 +532,56 @@ footer hr {
     background: linear-gradient(135deg, var(--primary-color), #764ba2);
 }
 
+/* =====================================================
+   FORMULARIO DE CONTACTO
+===================================================== */
+.contact-form .form-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.contact-form .form-control {
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+    outline: none;
+}
+
+.contact-form textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contact-form .btn-submit {
+    background: linear-gradient(135deg, var(--primary-color), #764ba2);
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 12px 40px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.contact-form .btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(13, 110, 253, 0.3);
+    color: white;
+    text-decoration: none;
+}
+
+.contact-form .required {
+    color: #dc3545;
+}
+
 /* Scroll smooth para todo */
 html {
     scroll-behavior: smooth;
